@@ -8,10 +8,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon eventmodule.js"
   },
   "dependencies": {
     "body-parser": "^2.2.0",
+    "concurrently": "^9.2.1",
     "express": "^5.1.0",
     "express-router": "^0.0.1",
     "middleware": "^1.0.0",
@@ -21,6 +22,7 @@
     "stream": "^0.0.3"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "concurrently": "^8.2.2"
   }
 }
