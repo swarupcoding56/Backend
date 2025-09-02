@@ -33,26 +33,45 @@ const eventCounter = {
     PURCHASE: 0,
     PROFILE_UPDATE: 0
 }
+const countFile="SUMMARYCOUNT.json"
+const fs=require("fs")
+const savecount=()=>{
+    fs.writeFileSync(countFile,JSON.stringify(eventCounter,null,2))
+}
+if(fs.existsSync(countFile)){
+    const data=fs.readFileSync(countFile,"utf-8")
+   Object.assign(eventCounter,JSON.parse(data))
+}
 useremmiter.on("LOGIN",(username)=>{
     console.log(`User logged in: ${username}`)
     eventCounter.LOGIN++
+    savecount()
 })
 useremmiter.on("LOGOUT",(username)=>{
     console.log(`User logged out: ${username}`)
     eventCounter.LOGOUT++
+    savecount()
 })
 useremmiter.on("PURCHASE",(username,item)=>{
     console.log(`User made a purchase: ${username}, Item: ${item}`)
     eventCounter.PURCHASE++
+    savecount()
 })
 useremmiter.on("PROFILE_UPDATE",(username)=>{
     console.log(`User updated profile: ${username}`)
     eventCounter.PROFILE_UPDATE++
+    savecount()
 })
-
+useremmiter.on("SUMMARY",()=>{
+    console.log("Event Summary:")
+    console.log(`- LOGIN: ${eventCounter.LOGIN}`)
+    console.log(`- LOGOUT: ${eventCounter.LOGOUT}`)
+    console.log(`- PURCHASE: ${eventCounter.PURCHASE}`)
+    console.log(`- PROFILE_UPDATE: ${eventCounter.PROFILE_UPDATE}`)
+})
 //ab sare event emiiter pass karna hein and sare value pass karna hein
 useremmiter.emit("LOGIN","JohnDoe")
 useremmiter.emit("LOGOUT","JohnDoe")
 useremmiter.emit("PURCHASE","JohnDoe","Laptop")
 useremmiter.emit("PROFILE_UPDATE","JohnDoe")
-console.log(eventCounter)
+useremmiter.emit("SUMMARY")
