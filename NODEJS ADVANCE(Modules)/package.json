@@ -17,12 +17,13 @@
     "express-router": "^0.0.1",
     "middleware": "^1.0.0",
     "node": "^22.19.0",
+    "repl": "^0.1.3",
     "require": "^0.4.4",
     "server": "^0.0.3",
     "stream": "^0.0.3"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10",
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.10"
   }
 }
