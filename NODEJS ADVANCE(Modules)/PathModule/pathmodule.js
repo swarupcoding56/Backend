@@ -21,6 +21,7 @@ console.log(path.format({
     base: path.basename(__filename),
     ext: path.extname(__filename)
 }))
+
 //dirname method
 console.log(path.dirname(__filename))
 //path.resolve vs path.join
