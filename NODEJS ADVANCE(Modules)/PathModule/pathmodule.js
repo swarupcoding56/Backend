@@ -5,6 +5,8 @@
 
 //join method
 console.log(path.join(__dirname,"subfolder","mainfile.txt"))
+
+
 //resolve metthod
 console.log(path.resolve("sample2.txt"))
 //parse method

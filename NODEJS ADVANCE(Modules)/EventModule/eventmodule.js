@@ -33,6 +33,7 @@ const eventCounter = {
     PURCHASE: 0,
     PROFILE_UPDATE: 0
 }
+
 const countFile="SUMMARYCOUNT.json"
 const fs=require("fs")
 const savecount=()=>{
@@ -40,7 +41,8 @@ const savecount=()=>{
 }
 if(fs.existsSync(countFile)){
     const data=fs.readFileSync(countFile,"utf-8")
-   Object.assign(eventCounter,JSON.parse(data))
+   Object.assign(eventCounter,JSON.parse(data)
+)
 }
 useremmiter.on("LOGIN",(username)=>{
     console.log(`User logged in: ${username}`)
