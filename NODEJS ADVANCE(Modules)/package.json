@@ -5,10 +5,10 @@
   "license": "ISC",
   "author": "",
   "type": "commonjs",
-  "main": "stream.js",
+  "main": "os.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon stream.js"
+    "start": "nodemon os.js"
   },
   "dependencies": {
     "body-parser": "^2.2.0",
