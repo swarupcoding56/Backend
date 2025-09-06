@@ -5,10 +5,10 @@
   "license": "ISC",
   "author": "",
   "type": "module",
-  "main": "COKKIE.js",
+  "main": "SESSION.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon COKKIE.js"
+    "start": "nodemon SESSION.js"
   },
   "dependencies": {
     "cookie-parser": "^1.4.7",
