@@ -1,6 +1,7 @@
 const http = require('http');
 const {Transform,pipeline} = require('stream')
 const fs = require('fs');
+
 //ki ek file se data lekr use kaise server or locally alag file pe render karwaye uske bahut sare methods hein orderwise 4 method hamne banaye hein lets check it up
 //1==> const server = http.createServer(async (req, res) => {
 //     await fs.writeFile('sample.txt', "hello world");
