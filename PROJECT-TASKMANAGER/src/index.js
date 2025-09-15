@@ -2,6 +2,7 @@ import express from "express";
 import session from "express-session";
 import cookieParser from "cookie-parser";
 import AuthRouter from "./routes/AuthRouter.js";
+import TasKRouter from "./routes/TasKRouter.js";
 const app = express();
 app.use(cookieParser());
 app.use(session({
@@ -16,6 +17,7 @@ app.get("/", (req, res) => {
   res.send("Welcome to Task Manager");
 });
 app.use("/auth",AuthRouter)
+app.use('/task',TasKRouter)
 const PORT=4000;
 
 app.listen(PORT, () => {
