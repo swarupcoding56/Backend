@@ -4,7 +4,8 @@ import bcrypt from "bcryptjs";
 const studentSchema = new mongoose.Schema({
   name: String,
   email: String,
-  password: String,
+  password: String ,
+  photo: String
 });
 
 // ✅ Pre-save hook for hashing password

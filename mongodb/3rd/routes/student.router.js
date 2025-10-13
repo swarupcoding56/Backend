@@ -9,11 +9,15 @@ loginpost,
 deleteStudent,
 } from "../controllers/student.controller.js";
 import otpmodel from '../models/otp.model.js';
+import upload from '../config/multer.js';
 import transporter from '../otp.js';
 import { jwtMiddleware } from '../middlewares/jwt.js';
 import {randomInt} from "crypto"
 router.get("/students/show",jwtMiddleware, getStudents);
-router.post("/students/register", createStudent);
+router.post("/students/register", upload.single("File"), createStudent);
+router.get("/students/register", (req, res) => {
+    res.render("form2", { title: "Register" });
+});
 router.get("/students/login",loginform);
 router.post("/students/login",loginpost)
 router.put("/students/update/:id",jwtMiddleware,updateStudent);

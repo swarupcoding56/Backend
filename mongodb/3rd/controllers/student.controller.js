@@ -5,13 +5,16 @@ import path from "path"
 import { jwtMiddleware ,generatetoken} from "../middlewares/jwt.js";
 import jwt from "jsonwebtoken"
 import { response } from "express";
+import fs from "fs"
 export const createStudent = async (req, res) => { 
+  const file=req.file
   const { name, password, email } = req.body; 
-
+  console.log(req.file.buffer.toString("base64"));
     const newStudent = new Student({ 
       name, 
       password,   // ✅ store hashed password
-      email 
+      email ,
+      photo:req.file.path
     });
 
     await newStudent.save()
